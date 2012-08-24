@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @assignment.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @assignment.description %>
+</p>
+
+<p>
+  <b>Assignment type:</b>
+  <%= @assignment.assignment_type %>
+</p>
+
+<p>
+  <b>Starts at:</b>
+  <%= @assignment.starts_at %>
+</p>
+
+<p>
+  <b>Duration hours:</b>
+  <%= @assignment.duration_hours %>
+</p>
+
+<p>
+  <b>Duration minutes:</b>
+  <%= @assignment.duration_minutes %>
+</p>
+
+<p>
+  <b>Ends at:</b>
+  <%= @assignment.ends_at %>
+</p>
+
+<p>
+  <b>All day:</b>
+  <%= @assignment.all_day %>
+</p>
+
+
+<%= link_to 'Edit', edit_assignment_path(@assignment) %> |
+<%= link_to 'Back', assignments_path %>
