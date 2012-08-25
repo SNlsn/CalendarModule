@@ -20,10 +20,10 @@
     <td><%= assignment.title %></td>
     <td><%= assignment.description %></td>
     <td><%= assignment.assignment_type %></td>
-    <td><%= assignment.starts_at %></td>
+    <td><%= assignment.starts_at.strftime("%A %b. %-e, %Y, %l:%M%p") %></td>
     <td><%= assignment.duration_hours %></td>
     <td><%= assignment.duration_minutes %></td>
-    <td><%= assignment.ends_at %></td>
+    <td><%= assignment.ends_at.strftime("%A %b. %-e, %Y, %l:%M%p") %></td>
     <td><%= assignment.all_day %></td>
     <td><%= link_to 'Show', assignment %></td>
     <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>

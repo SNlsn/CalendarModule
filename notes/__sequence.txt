@@ -229,15 +229,17 @@ uncomment config time zone, change to
  .strftime("%A %b. %-e, %Y, %l:%M%p")
  for example:
  <%= @event.starts_at.strftime("%A %b. %-e, %Y, %l:%M%p") %>
-   make the "event/assignment_type" be a drop down menu from a helper collection of preset choices (confirmed, tentative, personal)
-   
+ 
+Make the "event/assignment_type" be a drop down menu from a helper collection of preset choices like this:
+step 1)
 edit AssignmentsHelper module, creating methods that return arrays of options:
  def assignment_type_options
    ['confirmed', 'tentative', 'personal']
  end
-
+step 2)
 edit Assignment _form to add select for event type:
  <%= f.select(:event_type, event_type_options) %>
+Also, while editing that form, delete the "all day" checkbox form div - I'll never use "all day" as an attribute, but it seems to be a requirement for fullcalendar, so it's included in the database schema, but with a default of false.
 
 Set className
 (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/#color-options)
@@ -253,8 +255,10 @@ in css follow this form:
 
  change fullcalendar default view in calendar.js.coffee:
  defaultView: 'agendaWeek',
- to suppress the Al Day slot in agenda views, add
- allDaySlot: false,
+ to suppress the All Day slot in agenda views, add
+  allDaySlot: false,
+ to suppress the drag and drop editing ability, add
+  editable: false,
 
 set up git (including modifications to .gitignore):
   git init
@@ -262,3 +266,5 @@ set up git (including modifications to .gitignore):
   git commit -m "Initial Commit"
 
 rails server
+
+Discovered a couple places where I forgot to change event to assignment. For example, the calendar coffeescript's event source. Suggest doing a "find in project" to shed light on those oversights.

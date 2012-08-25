@@ -1,6 +1,6 @@
 $(document).ready ->	
   $('#calendar').fullCalendar
-    editable: true,
+    editable: false,
     allDaySlot: false,
     header:
       left: 'prev,next today',
@@ -11,7 +11,7 @@ $(document).ready ->
     slotMinutes: 15,
       
     eventSources: [{
-      url: '/events',
+      url: '/assignments',
       ignoreTimezone: false
     }],
       
@@ -26,7 +26,7 @@ $(document).ready ->
 
       
 updateEvent = (the_event) ->
-  $.update "/events/" + the_event.id,
+  $.update "/assignments/" + the_event.id,
     event: 
       title: the_event.title,
       starts_at: "" + the_event.start,

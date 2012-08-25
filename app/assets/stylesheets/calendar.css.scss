@@ -10,26 +10,20 @@
 }*/
 
 .confirmed, .fc-agenda .confirmed .fc-event-time, .confirmed a,  .confirmed .fc-event-skin {
-    background-color: #ceecc9; /* background color */
-    border-color: #ceecc9;     /* border color */
+    background-color: #D0F6C8; /* background color */
+    border-color: #ddd;     /* border color */
     color: #000;           /* text color */
     }
 
 .tentative, .fc-agenda .tentative .fc-event-time, .tentative a, .tentative .fc-event-skin {
-   background-color: #f8f1e7; /* background color */
-   border-color: #f8f1e7;     /* border color */
+   background-color: #CBB9F1; /* background color */
+   border-color: #ddd;     /* border color */
    color: #000;           /* text color */
    }
 
 
 .personal, .fc-agenda .personal .fc-event-time, .personal a, .personal .fc-event-skin {
-    background-color: #eae4f0; /* background color */
-    border-color: #eae4f0;     /* border color */
+    background-color: #B3E7F0; /* background color */
+    border-color: #ddd;     /* border color */
     color: #000;           /* text color */
     }
-
-.personal, .fc-agenda .personal .fc-event-time, .personal a, .personal .fc-event-skin {
-   background-color: #f00; /* background color */
-   border-color: #f00;     /* border color */
-   color: #000;           /* text color */
-   }

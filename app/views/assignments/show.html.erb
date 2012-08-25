@@ -17,10 +17,10 @@
 
 <p>
   <b>Starts at:</b>
-  <%= @assignment.starts_at %>
+  <%= @assignment.starts_at.strftime("%A %b. %-e, %Y, %l:%M%p") %>
 </p>
 
-<p>
+<!-- <p>
   <b>Duration hours:</b>
   <%= @assignment.duration_hours %>
 </p>
@@ -28,16 +28,11 @@
 <p>
   <b>Duration minutes:</b>
   <%= @assignment.duration_minutes %>
-</p>
+</p> -->
 
 <p>
   <b>Ends at:</b>
-  <%= @assignment.ends_at %>
-</p>
-
-<p>
-  <b>All day:</b>
-  <%= @assignment.all_day %>
+  <%= @assignment.ends_at.strftime("%A %b. %-e, %Y, %l:%M%p") %>
 </p>
 
 
