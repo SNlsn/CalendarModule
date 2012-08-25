@@ -7,8 +7,9 @@ $(document).ready ->
       center: 'title',
       right: 'month,agendaWeek,agendaDay'
     defaultView: 'agendaWeek',
-    height: 500,
-    slotMinutes: 15,
+    firstHour: 8,
+    height: 600,
+    slotMinutes: 30,
       
     eventSources: [{
       url: '/assignments',

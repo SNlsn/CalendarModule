@@ -31,7 +31,8 @@ class Assignment < ActiveRecord::Base
     end
 
       def starts_at_text
-        @starts_at_text || starts_at.try(:strftime, "%Y-%m-%d %H:%M:%S")
+        #@starts_at_text || starts_at.try(:strftime, "%Y-%m-%d %H:%M:%S")
+        @starts_at_text || starts_at.try(:strftime, "%A %b. %-e, %Y, %l:%M%p")
       end
 
       def save_starts_at_text

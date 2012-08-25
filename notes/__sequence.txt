@@ -74,7 +74,7 @@ class Assignment < ActiveRecord::Base
     end
 
       def starts_at_text
-        @starts_at_text || starts_at.try(:strftime, "%Y-%m-%d %H:%M:%S")
+        @starts_at_text || starts_at.try(:strftime, "%A %b. %-e, %Y, %l:%M%p")
       end
 
       def save_starts_at_text
@@ -276,6 +276,12 @@ in css follow this form:
   allDaySlot: false,
  to suppress the drag and drop editing ability, add
   editable: false,
+ to start at 8:00 AM:
+  firstHour: 8,
+to make it show more hours:
+  height: 500,
+to make the increments be half hours:
+  slotMinutes: 30,
 
 set up git (including modifications to .gitignore):
   git init
