@@ -24,6 +24,10 @@
     <%= f.select(:assignment_type, assignment_type_options) %>
   </div>
   <div class="field">
+    <%= f.label :clarify_start, 'Clarify Start:' %><br />
+    <%= f.select(:clarify_start, clarify_start_options) %>
+  </div>
+  <div class="field">
     <%= f.label :starts_at_text, 'Starts at: ' %><br />
     <%= f.text_field :starts_at_text %>
   </div>

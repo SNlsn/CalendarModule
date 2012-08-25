@@ -16,7 +16,7 @@
 </p>
 
 <p>
-  <b>Starts at:</b>
+  <b><%= @assignment.clarify_start unless @assignment.clarify_start.nil? %></b>
   <%= @assignment.starts_at.strftime("%A %b. %-e, %Y, %l:%M%p") %>
 </p>
 

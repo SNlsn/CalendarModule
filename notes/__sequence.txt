@@ -19,7 +19,7 @@ rvm ruby-1.9.3-p125@unify2
 
 delete README.rdoc and replace with README.md and some sane content.
 
-rails g scaffold assignment title description:text assignment_type starts_at:datetime duration_hours:integer duration_minutes:integer ends_at:datetime all_day:boolean
+rails g scaffold assignment title description:text assignment_type starts_at:datetime clarify_start duration_hours:integer duration_minutes:integer ends_at:datetime all_day:boolean
 
 before running migration, modify migration file:
 t.boolean :all_day, :default => false
@@ -240,6 +240,23 @@ step 2)
 edit Assignment _form to add select for event type:
  <%= f.select(:event_type, event_type_options) %>
 Also, while editing that form, delete the "all day" checkbox form div - I'll never use "all day" as an attribute, but it seems to be a requirement for fullcalendar, so it's included in the database schema, but with a default of false.
+
+Similarly. make clarify_start a select
+step 1)
+edit AssignmentsHelper module, creating methods that return arrays of options:
+ def clarify_start_options
+   ['ready at:', 'arrive at:']
+ end
+step 2)
+edit Assignment _form to add select for start time:
+ <%= f.select(:clarify_start, clarify_start_options) %>
+
+The modify Assignment Show template:
+<p>
+  <b><%= @assignment.clarify_start unless @assignment.clarify_start.nil? %></b>
+  <%= @assignment.starts_at.strftime("%A %b. %-e, %Y, %l:%M%p") %>
+</p>
+
 
 Set className
 (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/#color-options)

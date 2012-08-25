@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120824183642) do
+ActiveRecord::Schema.define(:version => 20120825182822) do
 
   create_table "assignments", :force => true do |t|
     t.string   "title"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120824183642) do
     t.boolean  "all_day",          :default => false
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
+    t.string   "clarify_start"
   end
 
 end
